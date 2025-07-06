@@ -1,5 +1,6 @@
 package com.example.demo_mapper.repository;
 
+import com.example.demo_mapper.domain.Student;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -24,5 +25,12 @@ public class StudentEntity {
     private String name;
     private LocalDate birthDate;
 
+    public static StudentEntity fromStudent(Student student) {
+        return new StudentEntity(
+            student.id(),
+            student.name(),
+            student.birthDate()
+        );
+    }
 
 }
