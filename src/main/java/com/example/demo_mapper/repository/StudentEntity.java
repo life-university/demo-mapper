@@ -25,12 +25,4 @@ public class StudentEntity {
     private String name;
     private LocalDate birthDate;
 
-    public static StudentEntity fromStudent(Student student) {
-        return new StudentEntity(
-            student.id(),
-            student.name(),
-            student.birthDate()
-        );
-    }
-
 }

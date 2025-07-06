@@ -2,6 +2,7 @@ package com.example.demo_mapper.controller;
 
 import com.example.demo_mapper.controller.dto.StudentForm;
 import com.example.demo_mapper.domain.Student;
+import com.example.demo_mapper.mapper.StudentMapper;
 import com.example.demo_mapper.service.StudentService;
 import jakarta.validation.Valid;
 import java.time.LocalDate;
@@ -25,7 +26,7 @@ public class StudentController {
     public String newStudent(@Valid StudentForm form) {
 
         // todo here we convert the StudentForm to a Student domain object
-        Student student = Student.fromForm(form);
+        Student student = StudentMapper.fromForm(form);
         studentService.save(student);
 
         return "success";
